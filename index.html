@@ -39,7 +39,10 @@
 					</div>
 				</div>
 			</section>
-			<audio controls="" src="https://ejcfg.github.io/conference/audio/AUD-20220825-WA0026.mp3" autoplay="0"></audio>
+			<audio controls="" autoplay="0">
+				<source src="https://ejcfg.github.io/conference/audio/AUD-20220825-WA0026.mp3" type="audio/mp3">
+				<source src="https://ejcfg.github.io/conference/audio/AUD-20220825-WA0031.mp3" type="audio/mp3">
+			</audio>
 		</div>
 
 		<footer id="site-footer" class="footer footer--dark footer--with-decoration" style="text-align:center;">
@@ -70,6 +73,17 @@
 			  x[myIndex-1].style.display = "block";  
 			  setTimeout(carousel, 5000); // Change image every 2 seconds
 			}
+
+			var source = "https://ejcfg.github.io/conference/audio/AUD-20220825-WA0026.mp3"
+ 			var audio = document.createElement("audio");
+			//
+			audio.autoplay = true;
+			//
+			audio.load()
+			audio.addEventListener("load", function() { 
+				audio.play(); 
+			}, true);
+			audio.src = source;
 		</script>
 	</body>
 </html>
