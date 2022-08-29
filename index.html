@@ -7,15 +7,33 @@
 		<link rel="stylesheet" type="text/css" href="css/vendors/Bootstrap/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/main.min.css">
 		<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<style>
+			.mySlides {display:none}
+			.w3-left, .w3-right, .w3-badge {cursor:pointer}
+			.w3-badge {height:13px;width:13px;padding:0}
+			</style>
 	</head>
 	<body>
 		<div class="main-content-wrapper">
-			<section class="crumina-stunning-header stunning-header-bg10 pb60">
+			<section class="crumina-stunning-header stunning-header-bg10">
 				<div class="container">
-					<div class="row align-items-center">
+					<div class="row align-items-center" style="margin-top:-50px;">
 						<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 m-auto align-center">
-							<h1 class="page-title text-white">EJCFG CONFERENCE</h1>
-							<p class="page-text text-white">Volutpat est velit egestas dui id ornare arcu odio ut. Gravida in fermentum et sollicitudin ac orci. Massa ultricies mi quis hendrerit.</p>
+							<h1 class="page-title text-white" style="font-weight:bold;">EGLISE DE JESUS-CHRIST FULL GOSPEL</h1>
+							<h4 class="page-title text-white" style="font-weight:bold;">PR&Eacute;SENTE</h4>
+						</div>
+					</div>
+					<div class="w3-content w3-display-container" style="max-width:800px">
+						<img class="mySlides" src="img/image1.jpeg" style="width:100%">
+						<img class="mySlides" src="img/image2.jpeg" style="width:100%">
+						<img class="mySlides" src="img/image3.jpeg" style="width:100%">
+						<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+							<div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+							<div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>\
+							<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+							<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+							<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
 						</div>
 					</div>
 					<br><br>
@@ -24,12 +42,10 @@
 					</div>
 				</div>
 			</section>
-			<div>
-				<audio controls autoplay>
-					<source src="https://ejcfg.github.io/conference/audio/AUD-20220825-WA0026.mp3" type="audio/mpeg">
-					<source src="https://ejcfg.github.io/conference/audio/AUD-20220825-WA0031.mp3" type="audio/mpeg">
-				</audio>
-			</div>
+			<audio controls autoplay>
+				<source src="https://github.com/ejcfg/conferenceaudio/AUD-20220825-WA0026.mp3" type="audio/mpeg">
+				<source src="https://github.com/ejcfg/conferenceaudio/AUD-20220825-WA0031.mp3" type="audio/mpeg">
+			</audio>
 		</div>
 
 		<footer id="site-footer" class="footer footer--dark footer--with-decoration" style="text-align:center;">
@@ -45,5 +61,21 @@
 				</div>
 			</div>
 		</footer>
+		<script>
+			var myIndex = 0;
+			carousel();
+			
+			function carousel() {
+			  var i;
+			  var x = document.getElementsByClassName("mySlides");
+			  for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";  
+			  }
+			  myIndex++;
+			  if (myIndex > x.length) {myIndex = 1}    
+			  x[myIndex-1].style.display = "block";  
+			  setTimeout(carousel, 2000); // Change image every 2 seconds
+			}
+		</script>
 	</body>
 </html>
